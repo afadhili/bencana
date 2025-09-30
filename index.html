@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DisasterEdu Indonesia - Edukasi Bencana Alam</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Feather Icons for modern iconography -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Logo -->
+          <div class="logo">
+            <div class="logo-icon">
+              <i data-feather="alert-triangle"></i>
+            </div>
+            <h1 class="logo-text">DisasterEdu Indonesia</h1>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav-desktop">
+            <button class="nav-btn active" onclick="scrollToSection('home')">
+              Home
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('profil-risiko')">
+              Profil Risiko
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('jenis-bencana')">
+              Jenis Bencana
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('mitigasi')">
+              Mitigasi
+            </button>
+            <button class="nav-btn" onclick="scrollToSection('data-statistik')">
+              Data & Statistik
+            </button>
+            <button
+              class="nav-btn"
+              onclick="scrollToSection('tips-kesiapsiagaan')"
+            >
+              Tips Kesiapsiagaan
+            </button>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i data-feather="menu" class="menu-icon"></i>
+            <i data-feather="x" class="close-icon" style="display: none"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="nav-mobile" id="mobileMenu">
+          <nav class="nav-mobile-content">
+            <button
+              class="nav-btn-mobile active"
+              onclick="scrollToSection('home'); closeMobileMenu()"
+            >
+              Home
+            </button>
+            <button
+              class="nav-btn-mobile"
+              onclick="scrollToSection('profil-risiko'); closeMobileMenu()"
+            >
+              Profil Risiko
+            </button>
+            <button
+              class="nav-btn-mobile"
+              onclick="scrollToSection('jenis-bencana'); closeMobileMenu()"
+            >
+              Jenis Bencana
+            </button>
+            <button
+              class="nav-btn-mobile"
+              onclick="scrollToSection('mitigasi'); closeMobileMenu()"
+            >
+              Mitigasi
+            </button>
+            <button
+              class="nav-btn-mobile"
+              onclick="scrollToSection('data-statistik'); closeMobileMenu()"
+            >
+              Data & Statistik
+            </button>
+            <button
+              class="nav-btn-mobile"
+              onclick="scrollToSection('tips-kesiapsiagaan'); closeMobileMenu()"
+            >
+              Tips Kesiapsiagaan
+            </button>
+            <button
+              class="nav-btn-mobile"
+              onclick="scrollToSection('tentang'); closeMobileMenu()"
+            >
+              Tentang
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <!-- Text Content -->
+            <div class="hero-text">
+              <div class="hero-title-group">
+                <h1 class="hero-title">Mencegah Risiko Bencana di Indonesia</h1>
+                <p class="hero-subtitle">
+                  Bencana bisa datang kapan saja, kesiapsiagaan menyelamatkan
+                  nyawa!
+                </p>
+              </div>
+
+              <div class="hero-buttons">
+                <button
+                  class="btn btn-primary"
+                  onclick="scrollToSection('mitigasi')"
+                >
+                  Pelajari Mitigasi
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="scrollToSection('data-statistik')"
+                >
+                  Lihat Data Bencana
+                </button>
+              </div>
+
+              <!-- Quick Stats -->
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <div class="stat-value">2,500+</div>
+                  <div class="stat-label">Bencana/Tahun</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">34</div>
+                  <div class="stat-label">Provinsi Berisiko</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">270M+</div>
+                  <div class="stat-label">Penduduk</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div class="hero-image">
+              <div class="hero-image-wrapper">
+                <img
+                  src="/assets/img/poster.png"
+                  alt="Infografis Pencegahan Risiko Bencana di Indonesia"
+                />
+              </div>
+              <!-- Overlay badge -->
+              <div class="hero-badge">
+                <div class="badge-label">Update Terbaru</div>
+                <div class="badge-value">Data 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlight Cards -->
+      <section class="highlight-cards">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Statistik & Panduan Utama</h2>
+            <p class="section-subtitle">
+              Data terkini dan panduan lengkap untuk kesiapsiagaan bencana di
+              Indonesia
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card highlight-card">
+              <div class="card-content">
+                <div class="card-icon blue-theme">
+                  <i data-feather="bar-chart"></i>
+                </div>
+                <h3 class="card-title">Jumlah Bencana 2025</h3>
+                <div class="card-value blue-text">2,847</div>
+                <p class="card-subtitle">kejadian bencana</p>
+                <button
+                  class="card-btn blue-theme"
+                  onclick="scrollToSection('data-statistik')"
+                >
+                  Pelajari Lebih Lanjut
+                </button>
+              </div>
+            </div>
+
+            <div class="card highlight-card">
+              <div class="card-content">
+                <div class="card-icon red-theme">
+                  <i data-feather="shield"></i>
+                </div>
+                <h3 class="card-title">Langkah Mitigasi</h3>
+                <div class="card-value red-text">12</div>
+                <p class="card-subtitle">strategi utama</p>
+                <button
+                  class="card-btn red-theme"
+                  onclick="scrollToSection('mitigasi')"
+                >
+                  Pelajari Lebih Lanjut
+                </button>
+              </div>
+            </div>
+
+            <div class="card highlight-card">
+              <div class="card-content">
+                <div class="card-icon yellow-theme">
+                  <i data-feather="heart"></i>
+                </div>
+                <h3 class="card-title">Tips Kesiapsiagaan</h3>
+                <div class="card-value yellow-text">25</div>
+                <p class="card-subtitle">panduan praktis</p>
+                <button
+                  class="card-btn yellow-theme"
+                  onclick="scrollToSection('tips-kesiapsiagaan')"
+                >
+                  Pelajari Lebih Lanjut
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profil Risiko -->
+      <section id="profil-risiko" class="profil-risiko">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Profil Risiko Bencana Indonesia</h2>
+            <p class="section-subtitle">
+              Indonesia terletak di ring of fire dengan berbagai ancaman bencana
+              alam yang memerlukan kesiapsiagaan tinggi
+            </p>
+          </div>
+
+          <div class="risk-content">
+            <div class="risk-cards">
+              <div class="risk-card earthquake">
+                <div class="risk-icon">
+                  <i data-feather="activity"></i>
+                </div>
+                <h3>Gempa Bumi</h3>
+                <div class="risk-level high">Tinggi</div>
+                <p>
+                  Terletak di pertemuan 3 lempeng tektonik utama dengan potensi
+                  gempa >7 SR
+                </p>
+              </div>
+
+              <div class="risk-card tsunami">
+                <div class="risk-icon">
+                  <i data-feather="trending-up"></i>
+                </div>
+                <h3>Tsunami</h3>
+                <div class="risk-level high">Tinggi</div>
+                <p>
+                  Garis pantai 81.000 km dengan riwayat tsunami destruktif di
+                  berbagai wilayah
+                </p>
+              </div>
+
+              <div class="risk-card volcano">
+                <div class="risk-icon">
+                  <i data-feather="triangle"></i>
+                </div>
+                <h3>Gunung Berapi</h3>
+                <div class="risk-level medium">Sedang</div>
+                <p>
+                  130 gunung berapi aktif dengan 69 diantaranya masuk kategori
+                  prioritas
+                </p>
+              </div>
+
+              <div class="risk-card flood">
+                <div class="risk-icon">
+                  <i data-feather="cloud-rain"></i>
+                </div>
+                <h3>Banjir</h3>
+                <div class="risk-level high">Tinggi</div>
+                <p>
+                  Curah hujan tinggi dan perubahan tata guna lahan meningkatkan
+                  risiko banjir
+                </p>
+              </div>
+            </div>
+
+            <div class="risk-map">
+              <div class="map-placeholder">
+                <h4>Peta Risiko Bencana Indonesia</h4>
+                <div class="map-legend">
+                  <div class="legend-item">
+                    <div class="legend-color high"></div>
+                    <span>Risiko Tinggi</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color medium"></div>
+                    <span>Risiko Sedang</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color low"></div>
+                    <span>Risiko Rendah</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Jenis Bencana -->
+      <section id="jenis-bencana" class="jenis-bencana">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Jenis Bencana di Indonesia</h2>
+            <p class="section-subtitle">
+              Mengenal berbagai jenis bencana alam yang sering terjadi di
+              Indonesia dan karakteristiknya
+            </p>
+          </div>
+
+          <div class="disaster-tabs">
+            <div class="tab-buttons">
+              <button class="tab-btn active" onclick="showTab('geologis')">
+                Geologis
+              </button>
+              <button class="tab-btn" onclick="showTab('hidrometeorologi')">
+                Hidrometeorologi
+              </button>
+              <button class="tab-btn" onclick="showTab('biologis')">
+                Biologis
+              </button>
+            </div>
+
+            <div class="tab-content">
+              <div id="geologis" class="tab-panel active">
+                <div class="disaster-grid">
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="activity"></i>
+                    </div>
+                    <h3>Gempa Bumi</h3>
+                    <p>
+                      Getaran atau guncangan yang terjadi akibat pergerakan
+                      lempeng bumi
+                    </p>
+                    <ul>
+                      <li>Skala: 1-10 Richter</li>
+                      <li>Durasi: Detik hingga menit</li>
+                      <li>Dampak: Kerusakan struktur</li>
+                    </ul>
+                  </div>
+
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="triangle"></i>
+                    </div>
+                    <h3>Gunung Berapi</h3>
+                    <p>Letusan gunung yang mengeluarkan material vulkanik</p>
+                    <ul>
+                      <li>Jenis: Efusif, Eksplosif</li>
+                      <li>Material: Lava, abu, gas</li>
+                      <li>Radius: 5-50 km</li>
+                    </ul>
+                  </div>
+
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="trending-up"></i>
+                    </div>
+                    <h3>Tsunami</h3>
+                    <p>
+                      Gelombang laut besar akibat gempa bawah laut atau longsor
+                    </p>
+                    <ul>
+                      <li>Kecepatan: 500-800 km/jam</li>
+                      <li>Tinggi: 1-30 meter</li>
+                      <li>Jangkauan: Puluhan km</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div id="hidrometeorologi" class="tab-panel">
+                <div class="disaster-grid">
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="cloud-rain"></i>
+                    </div>
+                    <h3>Banjir</h3>
+                    <p>
+                      Genangan air yang merendam daratan akibat curah hujan
+                      tinggi
+                    </p>
+                    <ul>
+                      <li>Durasi: Jam hingga minggu</li>
+                      <li>Ketinggian: 0.5-5 meter</li>
+                      <li>Area: Daerah aliran sungai</li>
+                    </ul>
+                  </div>
+
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="wind"></i>
+                    </div>
+                    <h3>Angin Topan</h3>
+                    <p>
+                      Sistem tekanan rendah dengan angin kencang dan hujan lebat
+                    </p>
+                    <ul>
+                      <li>Kecepatan: >120 km/jam</li>
+                      <li>Diameter: 100-2000 km</li>
+                      <li>Musim: Oktober-April</li>
+                    </ul>
+                  </div>
+
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="sun"></i>
+                    </div>
+                    <h3>Kekeringan</h3>
+                    <p>
+                      Kondisi kekurangan air dalam periode waktu yang panjang
+                    </p>
+                    <ul>
+                      <li>Durasi: Bulan hingga tahun</li>
+                      <li>Indikator: Curah hujan <60%</li>
+                      <li>Dampak: Pertanian, air bersih</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div id="biologis" class="tab-panel">
+                <div class="disaster-grid">
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="droplet"></i>
+                    </div>
+                    <h3>Wabah Penyakit</h3>
+                    <p>Penyebaran penyakit menular dalam skala besar</p>
+                    <ul>
+                      <li>Jenis: Virus, bakteri, parasit</li>
+                      <li>Penularan: Udara, air, vektor</li>
+                      <li>Skala: Lokal hingga global</li>
+                    </ul>
+                  </div>
+
+                  <div class="disaster-item">
+                    <div class="disaster-icon">
+                      <i data-feather="zap"></i>
+                    </div>
+                    <h3>Gagal Panen</h3>
+                    <p>
+                      Kegagalan produksi pertanian akibat hama atau penyakit
+                      tanaman
+                    </p>
+                    <ul>
+                      <li>Penyebab: Hama, virus tanaman</li>
+                      <li>Dampak: Ketahanan pangan</li>
+                      <li>Skala: Regional hingga nasional</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mitigasi -->
+      <section id="mitigasi" class="mitigasi">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Strategi Mitigasi Bencana</h2>
+            <p class="section-subtitle">
+              Langkah-langkah pencegahan dan pengurangan risiko bencana untuk
+              melindungi masyarakat
+            </p>
+          </div>
+
+          <div class="mitigation-phases">
+            <div class="phase-card pre-disaster">
+              <div class="phase-header">
+                <div class="phase-icon">
+                  <i data-feather="shield"></i>
+                </div>
+                <h3>Pra Bencana</h3>
+              </div>
+              <div class="mitigation-list">
+                <div class="mitigation-item">
+                  <i data-feather="map"></i>
+                  <div>
+                    <h4>Pemetaan Risiko</h4>
+                    <p>Identifikasi daerah rawan bencana</p>
+                  </div>
+                </div>
+                <div class="mitigation-item">
+                  <i data-feather="users"></i>
+                  <div>
+                    <h4>Edukasi Masyarakat</h4>
+                    <p>Sosialisasi kesiapsiagaan bencana</p>
+                  </div>
+                </div>
+                <div class="mitigation-item">
+                  <i data-feather="home"></i>
+                  <div>
+                    <h4>Bangunan Tahan Gempa</h4>
+                    <p>Konstruksi sesuai standar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="phase-card during-disaster">
+              <div class="phase-header">
+                <div class="phase-icon">
+                  <i data-feather="alert-triangle"></i>
+                </div>
+                <h3>Saat Bencana</h3>
+              </div>
+              <div class="mitigation-list">
+                <div class="mitigation-item">
+                  <i data-feather="bell"></i>
+                  <div>
+                    <h4>Sistem Peringatan</h4>
+                    <p>Alert dini untuk evakuasi</p>
+                  </div>
+                </div>
+                <div class="mitigation-item">
+                  <i data-feather="navigation"></i>
+                  <div>
+                    <h4>Jalur Evakuasi</h4>
+                    <p>Rute aman menuju shelter</p>
+                  </div>
+                </div>
+                <div class="mitigation-item">
+                  <i data-feather="life-buoy"></i>
+                  <div>
+                    <h4>Tim Tanggap Darurat</h4>
+                    <p>Respon cepat SAR</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="phase-card post-disaster">
+              <div class="phase-header">
+                <div class="phase-icon">
+                  <i data-feather="refresh-cw"></i>
+                </div>
+                <h3>Pasca Bencana</h3>
+              </div>
+              <div class="mitigation-list">
+                <div class="mitigation-item">
+                  <i data-feather="tool"></i>
+                  <div>
+                    <h4>Rehabilitasi</h4>
+                    <p>Perbaikan infrastruktur</p>
+                  </div>
+                </div>
+                <div class="mitigation-item">
+                  <i data-feather="heart"></i>
+                  <div>
+                    <h4>Trauma Healing</h4>
+                    <p>Pemulihan psikososial</p>
+                  </div>
+                </div>
+                <div class="mitigation-item">
+                  <i data-feather="trending-up"></i>
+                  <div>
+                    <h4>Build Back Better</h4>
+                    <p>Pembangunan lebih baik</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data & Statistik -->
+      <section id="data-statistik" class="data-statistik">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Data & Statistik Bencana</h2>
+            <p class="section-subtitle">
+              Analisis komprehensif data bencana alam di Indonesia untuk
+              memahami tren, pola, dan dampak bencana dalam mendukung kebijakan
+              mitigasi yang efektif.
+            </p>
+          </div>
+
+          <!-- Key Statistics -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon red-theme">
+                  <i data-feather="alert-triangle"></i>
+                </div>
+                <div class="stat-change decrease">—</div>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number red-text">182</div>
+                <div class="stat-label">Total Bencana 2025 (s/d Juni)</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon blue-theme">
+                  <i data-feather="trending-down"></i>
+                </div>
+                <div class="stat-change decrease">—</div>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number blue-text">31 orang</div>
+                <div class="stat-label">
+                  Korban Jiwa (meninggal + hilang + luka)
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon yellow-theme">
+                  <i data-feather="trending-down"></i>
+                </div>
+                <div class="stat-change decrease">—</div>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number yellow-text">1.570 unit</div>
+                <div class="stat-label">
+                  Kerusakan Rumah & Fasilitas (s/d Juni 2025)
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon green-theme">
+                  <i data-feather="trending-down"></i>
+                </div>
+                <div class="stat-change decrease">—</div>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number green-text">215.980 jiwa</div>
+                <div class="stat-label">
+                  Orang Terdampak / Mengungsi (s/d Juni)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts -->
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h3>Tren Bencana Tahunan (2020-2025)</h3>
+              <canvas id="yearlyChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+              <h3>Distribusi Jenis Bencana 2025</h3>
+              <canvas id="disasterTypesChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card full-width">
+            <h3>Tren Bulanan Kejadian Bencana 2025</h3>
+            <canvas id="monthlyChart"></canvas>
+          </div>
+
+          <!-- Key Insights -->
+          <div class="insights-grid">
+            <div class="insight-card red-theme">
+              <h4>Insight Utama</h4>
+              <p>
+                Terjadi penurunan 6.8% kejadian bencana dibanding tahun
+                sebelumnya, menunjukkan efektivitas program mitigasi yang telah
+                dilakukan.
+              </p>
+            </div>
+
+            <div class="insight-card blue-theme">
+              <h4>Rekomendasi</h4>
+              <p>
+                Fokus pada peningkatan sistem peringatan dini untuk banjir yang
+                masih mendominasi 45% dari total kejadian bencana.
+              </p>
+            </div>
+
+            <div class="insight-card yellow-theme">
+              <h4>Proyeksi 2026</h4>
+              <p>
+                Diperkirakan akan terjadi penurunan lebih lanjut hingga 8%
+                dengan penerapan teknologi AI dalam prediksi bencana.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tips Kesiapsiagaan -->
+      <section id="tips-kesiapsiagaan" class="tips-kesiapsiagaan">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Tips Kesiapsiagaan Bencana</h2>
+            <p class="section-subtitle">
+              Panduan praktis untuk mempersiapkan diri menghadapi berbagai jenis
+              bencana alam
+            </p>
+          </div>
+
+          <div class="tips-categories">
+            <div class="tip-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i data-feather="package"></i>
+                </div>
+                <h3>Tas Siaga Bencana</h3>
+              </div>
+              <div class="tips-list">
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Air minum untuk 3 hari (4 liter/orang)</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Makanan tahan lama (biskuit, mie instan)</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Obat-obatan pribadi dan P3K</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Senter dan baterai cadangan</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Radio portable</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tip-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i data-feather="home"></i>
+                </div>
+                <h3>Persiapan Rumah</h3>
+              </div>
+              <div class="tips-list">
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Kencangkan furniture berat ke dinding</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Periksa kondisi atap dan pondasi</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Buat rencana evakuasi keluarga</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Siapkan alat pemadam api ringan</span>
+                </div>
+                <div class="tip-item">
+                  <i data-feather="check"></i>
+                  <span>Ketahui lokasi saklar gas dan listrik</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tip-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <i data-feather="phone"></i>
+                </div>
+                <h3>Kontak Darurat</h3>
+              </div>
+              <div class="emergency-contacts">
+                <div class="contact-item">
+                  <div class="contact-service">Polisi</div>
+                  <div class="contact-number">110</div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-service">Pemadam Kebakaran</div>
+                  <div class="contact-number">113</div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-service">Ambulans</div>
+                  <div class="contact-number">118</div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-service">SAR</div>
+                  <div class="contact-number">115</div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-service">BNPB</div>
+                  <div class="contact-number">117</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Action Steps -->
+          <div class="emergency-actions">
+            <h3>Langkah Darurat Berdasarkan Jenis Bencana</h3>
+
+            <div class="action-tabs">
+              <button
+                class="action-tab-btn active"
+                onclick="showActionTab('gempa')"
+              >
+                Gempa
+              </button>
+              <button class="action-tab-btn" onclick="showActionTab('banjir')">
+                Banjir
+              </button>
+              <button class="action-tab-btn" onclick="showActionTab('tsunami')">
+                Tsunami
+              </button>
+              <button
+                class="action-tab-btn"
+                onclick="showActionTab('kebakaran')"
+              >
+                Kebakaran
+              </button>
+            </div>
+
+            <div class="action-content">
+              <div id="gempa" class="action-panel active">
+                <div class="action-steps">
+                  <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h4>Drop, Cover, Hold On</h4>
+                      <p>Jatuhkan diri, cari perlindungan, dan pegangan</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h4>Jauhi benda berat</h4>
+                      <p>Hindari lemari, kaca, dan perabot yang bisa jatuh</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h4>Keluar setelah guncangan berhenti</h4>
+                      <p>Gunakan tangga, jangan lift</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="banjir" class="action-panel">
+                <div class="action-steps">
+                  <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h4>Pindah ke tempat tinggi</h4>
+                      <p>Segera ke lantai atas atau bukit terdekat</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h4>Matikan listrik dan gas</h4>
+                      <p>Hindari risiko tersengat listrik</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h4>Hindari berjalan di air</h4>
+                      <p>Air setinggi mata kaki sudah berbahaya</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="tsunami" class="action-panel">
+                <div class="action-steps">
+                  <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h4>Lari ke tempat tinggi</h4>
+                      <p>Minimal 40 meter dari pantai dan 30 meter dpl</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h4>Jangan kembali ke pantai</h4>
+                      <p>Gelombang susulan bisa lebih besar</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h4>Dengarkan informasi resmi</h4>
+                      <p>Tunggu all clear dari otoritas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="kebakaran" class="action-panel">
+                <div class="action-steps">
+                  <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h4>Panggil bantuan</h4>
+                      <p>Hubungi pemadam kebakaran 113</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h4>Merangkak di bawah asap</h4>
+                      <p>Udara bersih ada di dekat lantai</p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h4>Jangan kembali ke dalam</h4>
+                      <p>Tunggu petugas pemadam kebakaran</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <div class="logo-icon">
+                <i data-feather="alert-triangle"></i>
+              </div>
+              <h3>DisasterEdu Indonesia</h3>
+            </div>
+            <p>
+              Platform edukasi untuk kesiapsiagaan bencana di Indonesia. Bersama
+              membangun masyarakat yang tangguh.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Navigasi</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#profil-risiko">Profil Risiko</a></li>
+              <li><a href="#jenis-bencana">Jenis Bencana</a></li>
+              <li><a href="#mitigasi">Mitigasi</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Informasi</h4>
+            <ul>
+              <li><a href="#data-statistik">Data & Statistik</a></li>
+              <li><a href="#tips-kesiapsiagaan">Tips Kesiapsiagaan</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Kontak Darurat</h4>
+            <div class="emergency-list">
+              <div class="emergency-item">
+                <span>BNPB</span>
+                <strong>117</strong>
+              </div>
+              <div class="emergency-item">
+                <span>SAR</span>
+                <strong>115</strong>
+              </div>
+              <div class="emergency-item">
+                <span>Polisi</span>
+                <strong>110</strong>
+              </div>
+              <div class="emergency-item">
+                <span>Pemadam</span>
+                <strong>113</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
